@@ -1,6 +1,6 @@
 package cn.small.spring.beans;
 
-import cn.small.spring.beans.exception.BeansException;
+import cn.small.spring.beans.factory.exception.BeansException;
 
 /**
  * @Classname BeanFactory

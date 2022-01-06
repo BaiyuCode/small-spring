@@ -1,6 +1,6 @@
-package cn.small.spring.beans;
+package cn.small.spring.beans.factory.support;
 
-import cn.small.spring.beans.config.BeanDefinition;
+import cn.small.spring.beans.factory.config.BeanDefinition;
 
 /**
  * @Classname BeanDefinitionRegistry

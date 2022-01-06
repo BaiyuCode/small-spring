@@ -1,6 +1,7 @@
-package cn.small.spring.beans;
+package cn.small.spring.beans.factory.support;
 
-import java.util.HashMap;
+import cn.small.spring.beans.factory.config.SingletonBeanRegistry;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 

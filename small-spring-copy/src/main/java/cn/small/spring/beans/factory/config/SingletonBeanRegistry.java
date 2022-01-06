@@ -1,4 +1,4 @@
-package cn.small.spring.beans;
+package cn.small.spring.beans.factory.config;
 
 /**
  * @Classname SingletonBeanRegistry

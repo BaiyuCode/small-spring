@@ -1,7 +1,8 @@
-package cn.small.spring.beans;
+package cn.small.spring.beans.factory.support;
 
-import cn.small.spring.beans.config.BeanDefinition;
-import cn.small.spring.beans.exception.BeansException;
+import cn.small.spring.beans.BeanFactory;
+import cn.small.spring.beans.factory.config.BeanDefinition;
+import cn.small.spring.beans.factory.exception.BeansException;
 
 /**
  * @Classname AbstractBeanFactory
@@ -9,7 +10,7 @@ import cn.small.spring.beans.exception.BeansException;
  * @Date 2022/1/5 20:41
  * @Created by baiyu768
  */
-public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory{
+public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
     @Override
     public Object getBean(String name) throws BeansException {
         return doGetBean(name);

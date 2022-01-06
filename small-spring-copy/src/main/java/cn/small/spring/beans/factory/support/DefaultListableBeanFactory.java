@@ -1,7 +1,7 @@
-package cn.small.spring.beans;
+package cn.small.spring.beans.factory.support;
 
-import cn.small.spring.beans.config.BeanDefinition;
-import cn.small.spring.beans.exception.BeansException;
+import cn.small.spring.beans.factory.config.BeanDefinition;
+import cn.small.spring.beans.factory.exception.BeansException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,8 +12,7 @@ import java.util.Map;
  * @Date 2022/1/5 21:18
  * @Created by baiyu768
  */
-public class
-DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry {
+public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry {
     private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 
     @Override

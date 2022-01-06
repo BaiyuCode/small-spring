@@ -1,4 +1,4 @@
-package cn.small.spring.beans.exception;
+package cn.small.spring.beans.factory.exception;
 
 /**
  * @Classname BeansException

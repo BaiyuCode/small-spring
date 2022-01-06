@@ -1,10 +1,14 @@
 package test;
 
-import cn.small.spring.beans.DefaultListableBeanFactory;
-import cn.small.spring.beans.config.BeanDefinition;
+import cn.small.spring.beans.PropertyValue;
+import cn.small.spring.beans.PropertyValues;
+import cn.small.spring.beans.factory.config.BeanReference;
+import cn.small.spring.beans.factory.support.DefaultListableBeanFactory;
+import cn.small.spring.beans.factory.config.BeanDefinition;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.NoOp;
 import org.junit.Test;
+import test.bean.UserDao;
 import test.bean.UserService;
 
 import java.lang.reflect.Constructor;
@@ -23,8 +27,13 @@ public class ApiTest {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 
         // 3. 注入bean
-        BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
-        beanFactory.registerBeanDefinition("userService", beanDefinition);
+        BeanDefinition userDaoBean = new BeanDefinition(UserDao.class);
+        beanFactory.registerBeanDefinition("userDao",userDaoBean);
+        final PropertyValues propertyValues = new PropertyValues();
+        propertyValues.getPropertyValueList().add(new PropertyValue("uId","10002"));
+        propertyValues.getPropertyValueList().add(new PropertyValue("userDao",new BeanReference("userDao")));
+        BeanDefinition userServiceBean = new BeanDefinition(UserService.class,propertyValues);
+        beanFactory.registerBeanDefinition("userService", userServiceBean);
 
         // 4.获取bean
         UserService userService = (UserService) beanFactory.getBean("userService", "小傅哥");

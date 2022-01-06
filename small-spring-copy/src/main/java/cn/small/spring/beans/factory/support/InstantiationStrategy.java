@@ -1,7 +1,7 @@
-package cn.small.spring.beans;
+package cn.small.spring.beans.factory.support;
 
-import cn.small.spring.beans.config.BeanDefinition;
-import cn.small.spring.beans.exception.BeansException;
+import cn.small.spring.beans.factory.config.BeanDefinition;
+import cn.small.spring.beans.factory.exception.BeansException;
 
 import java.lang.reflect.Constructor;
 
